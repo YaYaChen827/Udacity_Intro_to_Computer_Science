@@ -1,0 +1,6 @@
+Python Data Structure Concepts:
+Just like dictionary, a key maps a value. 
+For lesson's scenario, we have page's keyword, content and some urls to store for sample search engine.
+
+Solving:
+[keyword,[url,content],[url,content]] would be good way to represent the index
