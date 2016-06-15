@@ -1,7 +1,6 @@
 import time
 
 def time_execution(code):
-	
 	start = time.clock()
 	#The eval function lets the python program to run python code.
 	#The code format is string (ex: eval('print 1'))
