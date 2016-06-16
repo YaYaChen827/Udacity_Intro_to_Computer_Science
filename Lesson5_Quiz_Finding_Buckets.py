@@ -15,6 +15,7 @@ def hash_string(keyword,buckets):
 
 def make_hashtable(nbuckets):
     table = []
+    # Because we just only calculate times for nbuckets, so the number unused don't do anything in loop 
     for unused in range(0,nbuckets):
         table.append([])
     return table
