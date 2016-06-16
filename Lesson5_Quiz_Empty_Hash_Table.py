@@ -37,5 +37,7 @@ print table[0]
 print table[1]
 #>>> [['Udacity', ['https://www.udacity.com']]]
 
+
 #That is tricky function, I think a logical mistake on this way.
 #If you use [[]]*buckets and then set a value to any element which equal set all element.
+#The next quiz's answer explains each element in the output refer to the same empty list
