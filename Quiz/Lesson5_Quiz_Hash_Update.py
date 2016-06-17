@@ -12,21 +12,21 @@
 def hashtable_update(htable,key,value):
     # Follwing code is correct of the submit answer version 
     # which seems to emphasize "return htable".
-    #bucket = hashtable_get_bucket(htable,key)
-    #for entry in bucket:
-    #    if entry[0] == key:
-    #        entry[1] = value
-    #        return htable
-    #bucket.append([key,value])
-    #return htable
-    
-    # This my code
     bucket = hashtable_get_bucket(htable,key)
     for entry in bucket:
         if entry[0] == key:
             entry[1] = value
-            return
-    hashtable_add(htable,key,value)
+            return htable
+    bucket.append([key,value])
+    return htable
+    
+    # This my code
+    #bucket = hashtable_get_bucket(htable,key)
+    #for entry in bucket:
+    #    if entry[0] == key:
+    #        entry[1] = value
+    #        return
+    #hashtable_add(htable,key,value)
 
 def hashtable_lookup(htable,key):
     bucket = hashtable_get_bucket(htable,key)
