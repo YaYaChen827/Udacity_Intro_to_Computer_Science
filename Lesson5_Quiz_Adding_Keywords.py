@@ -56,3 +56,5 @@ hashtable_add(table,'Zoe', 14)
 hashtable_add(table,'Louis', 29)
 hashtable_add(table,'Andy', 5)
 print table
+#>>> [[['Ellis', 11], ['Francis', 13]], [['Andy', 5]], [['Bill', 17], ['Zoe', 14]], 
+#>>> [['Coach', 4]], [['Louis', 29], ['Nick', 2], ['Rochelle', 4], ['Louis', 29]]]
