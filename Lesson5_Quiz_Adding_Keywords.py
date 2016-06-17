@@ -12,11 +12,7 @@
 
 def hashtable_add(htable,key,value):
     # your code here
-    for i in range(0, len(htable)):
-        # Using module and htable length to know the address
-        if hash_string(key,len(htable)) == i:
-            htable[i].append([key,value])
-    return htable        
+    hashtable_get_bucket(htable,key).append([key,value])        
     
 def hashtable_get_bucket(htable,keyword):
     return htable[hash_string(keyword,len(htable))]
