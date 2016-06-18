@@ -9,7 +9,8 @@ def get_all_links(page):
     while True: 
         url, endpos = get_next_target(page)
         if url: 
-            links.append(url) page = page[endpos:] 
+            links.append(url) 
+            page = page[endpos:] 
         else: 
             break 
     return links
@@ -50,7 +51,24 @@ def add_to_index(index, keyword, url):
         index[keyword] = [url]  
 
 def lookup(index, keyword): 
-    for entry in index: 
-        if entry[0] == keyword: 
-            return entry[1] 
+    # List version
+    #for entry in index: 
+    #    if entry[0] == keyword: 
+    #        return entry[1] 
+    #return None
+
+    #Dictionary version
+    if keyword in index:
+        return index[keyword]
     return None
+
+# lookup Testing1
+index = {'udacity': ['http://udacity.com', 'http://npr.org']}
+print lookup(index, 'computing')
+#>>> None
+
+# lookup Testing2 
+index2 = {'udacity' : ['http://udacity.com', 'http://npr.org'], 
+'computing': ['http://acm.org']}
+print lookup(index2, 'computing')
+#>>> ['http://acm.org']
