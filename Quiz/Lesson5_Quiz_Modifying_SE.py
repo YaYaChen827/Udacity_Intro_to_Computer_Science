@@ -16,8 +16,9 @@ def get_all_links(page):
 
 def crawl_web(seed): 
     tocrawl = [seed] 
-    crawled = [] 
-    index = [] 
+    crawled = []
+    # Modifying index to Dictionary
+    index = {}
     while tocrawl: 
         page = tocrawl.pop()
         if page not in crawled: 
@@ -33,11 +34,20 @@ def add_page_to_index(index, url, content):
         add_to_index(index, word, url) 
 
 def add_to_index(index, keyword, url): 
-    for entry in index: 
-        if entry[0] == keyword: entry[1].append(url) 
-            return 
+    # List version
+    #for entry in index: 
+    #    if entry[0] == keyword: 
+    #         entry[1].append(url) 
+    #         return 
     # not found, add new keyword to index 
-    index.append([keyword, [url]]) 
+    #index.append([keyword, [url]]) 
+
+    # Dictionary version (very simply)
+    if keyword in index:
+        index[keyword].append(url)
+    else:
+        #Adding new item to index by this syntax
+        index[keyword] = [url]  
 
 def lookup(index, keyword): 
     for entry in index: 
