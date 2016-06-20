@@ -5,6 +5,7 @@
 def shift(letter):
 	if letter == 'z':
 		return 'a'
+		#return chr(ord('z')-26)
 	return chr(ord(letter)+1)
 
 # Testing 

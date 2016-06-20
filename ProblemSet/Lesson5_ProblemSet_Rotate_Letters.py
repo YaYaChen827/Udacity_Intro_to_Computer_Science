@@ -13,7 +13,7 @@ def rotate(letters, n):
     return string
 
 def shift_n_letters(letter, n):
-	#Rewriting
+	# Calling this function to rotate letters conveniently
 	strNum = ord(letter) + n
 	if letter == ' ':
 		return letter
