@@ -10,26 +10,23 @@
 # there will be no '<' without a following '>'.
 
 def remove_tags(words):
-	string = []
-	for i in range(0, len(words)):
-		if words[i] == '<':
-			letters = ''
-			for letter in words[i+1:]:
-				if letter != '>':
-					letters = letters + letter
-			string.append(letters)			
-	return string
-		
-print remove_tags('''<h1>Title</h1><p>This is a
-                    <a href="http://www.udacity.com">link</a>.<p>''')
+	# Submit Version, it is using replacement concept
+	start = words.find('<')
+	while start != -1:
+		end = words.find('>', start)
+		words = words[:start] + ' ' + words[end+1:]
+		start = words.find('<')
+	return words.split()	
+
+print remove_tags('''<h1>Title</h1><p>This is a<a href="http://www.udacity.com">link</a>.<p>''')
 #>>> ['Title','This','is','a','link','.']
 
-print remove_tags('''<table cellpadding='3'>
-                     <tr><td>Hello</td><td>World!</td></tr>
-                     </table>''')
+#print remove_tags('''<table cellpadding='3'>
+#                     <tr><td>Hello</td><td>World!</td></tr>
+#                     </table>''')
 #>>> ['Hello','World!']
 
-print remove_tags("<hello><goodbye>")
+#print remove_tags("<hello><goodbye>")
 #>>> []
 
 print remove_tags("This is plain text.")
