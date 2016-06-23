@@ -25,6 +25,16 @@
 # returned list should be a list of the numbers at the corresponding row in the
 # triangle.
 
+# This idea and code are from 'http://inkdroid.org/2005/08/10/pascals-triangle-in-python/'
+
+def triangle(n):
+	if n == 0: 
+		return []
+	if n == 1: 
+		return [[1]]
+	else:
+		NextTri = triangle(n-1)
+		lastRow = NextTri[-1]
 		#NextTri.append([(i+j) for i,j in zip([0]+lastRow, lastRow+[0])])
 		temp = []
 		for i,j in zip([0]+lastRow, lastRow+[0]):
